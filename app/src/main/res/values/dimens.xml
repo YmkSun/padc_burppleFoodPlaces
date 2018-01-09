@@ -37,4 +37,9 @@
     <dimen name="size_tappable_small">48dp</dimen>
     <dimen name="button_large_size">54dp</dimen>
     <dimen name="news_details_publication_logo_margin_bottom">36dp</dimen>
+
+    <dimen name="rv_item_width">180dp</dimen>
+    <dimen name="rv_item_height">230dp</dimen>
+    <dimen name="rv_item_img_width">160dp</dimen>
+    <dimen name="rv_item_img_height">180dp</dimen>
 </resources>

@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Burpple Food</string>
+    <string name="activity_main_label">burpple</string>
+    <string name="near_small_title">You are near</string>
+    <string name="known_for">Known For</string>
+    <string name="placeholder_main_search">Search e.g. Japanese in Yangon</string>
+    <string name="far_away">Far Away</string>
+    <string name="explore">Explore</string>
+    <string name="promotion">Promotion</string>
+    <string name="promotions">Promotion</string>
+    <string name="featured">Featured</string>
+    <string name="see_more">See More</string>
+
+    <string name="near_head_title">Yangon</string>
+    <string name="foog_tag_main">food tag</string>
+    <string name="food_list">Food List</string>
+    <string name="food_label_1">Sushi</string>
+    <string name="food_label_2">Burger</string>
+    <string name="food_label_3">Cake</string>
+    <string name="food_label_4">Pasta</string>
 </resources>
