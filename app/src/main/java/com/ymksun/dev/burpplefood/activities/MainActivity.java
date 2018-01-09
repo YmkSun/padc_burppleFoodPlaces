@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.ymksun.dev.burpplefood.R;
+import com.ymksun.dev.burpplefood.adapters.GuidelineFoodAdapter;
 import com.ymksun.dev.burpplefood.adapters.MainPagerAdapter;
 import com.ymksun.dev.burpplefood.adapters.NearestFoodListAdapter;
 import com.ymksun.dev.burpplefood.adapters.NearestFoodTagAdapter;
@@ -30,10 +31,14 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_promotion_food_list)
     RecyclerView rvPromotionFoodList;
 
+    @BindView(R.id.rv_guideline_food_list)
+    RecyclerView rvGuidelineFoodList;
+
     private MainPagerAdapter mainPagerAdapter;
     private NearestFoodTagAdapter mNearestFoodTagAdapter;
     private NearestFoodListAdapter mNearestFoodListAdapter;
     private PromotionFoodListAdapter mPromotionFoodListAdapter;
+    private GuidelineFoodAdapter mGuidelineFoodAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,5 +62,9 @@ public class MainActivity extends AppCompatActivity {
         mPromotionFoodListAdapter = new PromotionFoodListAdapter(getApplicationContext());
         rvPromotionFoodList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
         rvPromotionFoodList.setAdapter(mPromotionFoodListAdapter);
+
+        mGuidelineFoodAdapter = new GuidelineFoodAdapter(getApplicationContext());
+        rvGuidelineFoodList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        rvGuidelineFoodList.setAdapter(mGuidelineFoodAdapter);
     }
 }

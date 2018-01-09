@@ -27,43 +27,41 @@
 
             </android.support.v4.view.ViewPager>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <TextView
-                    android:id="@+id/title_rp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="@string/activity_main_label"
-                    android:textSize="@dimen/text_heading_2x"
-                    android:textColor="@color/white_full"
-                    android:layout_marginBottom="@dimen/margin_medium"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="@dimen/margin_medium_2"
-                    android:layout_marginEnd="@dimen/margin_medium_2"
-                    android:layout_below="@id/title_rp"
-                    android:text="@string/placeholder_main_search"
-                    android:textSize="@dimen/text_regular_2x"
-                    android:textColor="@color/secondary_text"
-                    android:focusable="false"
-                    android:background="@drawable/bg_custom_search_main"
-                    android:drawableStart="@drawable/ic_search_gray_24dp"
-                    android:padding="@dimen/margin_card_medium"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed"/>
-
-            </RelativeLayout>
-
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"/>
+
+            <TextView
+                android:id="@+id/title_rp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:gravity="center_horizontal"
+                android:text="@string/activity_main_label"
+                android:textColor="@color/white_full"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:background="@drawable/bg_custom_search_main"
+                android:drawableStart="@drawable/ic_search_gray_24dp"
+                android:focusable="false"
+                android:padding="@dimen/margin_card_medium"
+                android:text="@string/placeholder_main_search"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular_2x"
+                app:layout_collapseMode="pin"
+                android:fitsSystemWindows="true" />
+
+
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -77,66 +75,76 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/margin_large"
-            android:paddingBottom="@dimen/margin_medium"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <RelativeLayout
                 android:id="@+id/rl_near_places_main"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xlarge">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_alignParentBottom="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/background_near" />
 
                 <TextView
                     android:id="@+id/tv_near_small_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_2"
-                    android:text="@string/near_small_title"
-                    android:textSize="@dimen/text_regular"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:text="@string/you_are_near"
+                    android:textAllCaps="true"
                     android:textColor="@color/secondary_text"
-                    android:textAllCaps="true"/>
+                    android:textSize="@dimen/text_regular"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_near_head_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_near_small_title"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/near_head_title"
                     android:textColor="@color/primary_text"
-                    android:textSize="@dimen/text_heading_1x" />
+                    android:textSize="@dimen/text_heading_1x"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_near_known_for"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_near_head_title"
-                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:text="@string/known_for"
+                    android:textColor="@color/primary"
                     android:textSize="@dimen/text_regular"
-                    android:textColor="@color/primary"/>
+                    android:textStyle="bold" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_near_food_tag"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_near_known_for"
-                    android:layout_marginTop="@dimen/margin_medium"/>
+                    android:layout_marginTop="@dimen/margin_medium_2" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_near_food_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rv_near_food_tag"
+                    android:layout_marginBottom="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_medium_2"
-                    android:padding="@dimen/margin_small"
                     android:clipToPadding="false"
-                    android:scrollbarStyle="outsideOverlay"/>
+                    android:padding="@dimen/margin_small"
+                    android:scrollbarStyle="outsideOverlay" />
 
 
             </RelativeLayout>
@@ -145,59 +153,247 @@
                 android:id="@+id/rl_promotion_food_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_large"
-                android:layout_below="@id/rl_near_places_main">
+                android:layout_below="@id/rl_near_places_main"
+                android:layout_marginTop="@dimen/margin_xxlarge">
 
                 <TextView
                     android:id="@+id/tv_promotion_featured"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:text="@string/featured"
-                    android:textSize="@dimen/text_regular"
+                    android:textAllCaps="true"
                     android:textColor="@color/secondary_text"
-                    android:textAllCaps="true" />
+                    android:textSize="@dimen/text_regular"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_promotion_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_promotion_featured"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/promotions"
                     android:textColor="@color/primary_text"
-                    android:textSize="@dimen/text_heading_1x" />
+                    android:textSize="@dimen/text_heading_1x"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_promotion_see_more"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_promotion_featured"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_small"
                     android:layout_toRightOf="@id/tv_promotion_title"
                     android:gravity="right"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:layout_marginStart="@dimen/margin_medium_2"
-                    android:layout_marginEnd="@dimen/margin_medium_2"
                     android:text="@string/see_more"
-                    android:textSize="@dimen/text_regular"
                     android:textColor="@color/primary"
-                    android:textAllCaps="true"/>
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textStyle="bold" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_promotion_food_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_below="@id/tv_promotion_title"
-                    android:padding="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:clipToPadding="false"
+                    android:padding="@dimen/margin_small"
                     android:scrollbarStyle="outsideOverlay" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_guideline_food_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_promotion_food_main"
+                android:layout_marginTop="@dimen/margin_xxlarge">
+
+                <TextView
+                    android:id="@+id/tv_guideline_latest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:text="@string/latest"
+                    android:textAllCaps="true"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_guideline_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_guideline_latest"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/burpple_guidelines"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_heading_1x"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_guideline_see_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_guideline_latest"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_toRightOf="@id/tv_guideline_title"
+                    android:gravity="right"
+                    android:text="@string/see_more"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_guideline_food_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_guideline_title"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/margin_small"
+                    android:scrollbarStyle="outsideOverlay" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_newest_food_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_guideline_food_main"
+                android:layout_marginBottom="@dimen/margin_xxlarge"
+                android:layout_marginTop="@dimen/margin_xxlarge">
+
+                <TextView
+                    android:id="@+id/tv_newest_latest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:text="@string/latest"
+                    android:textAllCaps="true"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_newest_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_newest_latest"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/new_n_trending"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/text_heading_1x"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_newest_title"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/view_newly_opened" />
+
+                    <include layout="@layout/view_trending_venues" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/v_divider_main_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/rl_newest_food_main"
+                android:background="@color/divider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_neighbourhoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_divider_main_1"
+                android:paddingBottom="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_large">
+
+                <ImageView
+                    android:id="@+id/iv_neighbourhoods_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:src="@drawable/ic_location_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_neighbourhoods_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_xlarge"
+                    android:layout_toEndOf="@id/iv_neighbourhoods_main"
+                    android:text="@string/explore_neighbourhoods"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular_2x" />
 
 
             </RelativeLayout>
+
+            <View
+                android:id="@+id/v_divider_main_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/rl_neighbourhoods"
+                android:background="@color/divider" />
+
+            <RelativeLayout
+                android:id="@+id/rl_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_divider_main_2"
+                android:paddingBottom="@dimen/margin_large"
+                android:paddingTop="@dimen/margin_large">
+
+                <ImageView
+                    android:id="@+id/iv_categories_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:src="@drawable/ic_restaurant_24dp" />
+
+                <TextView
+                    android:id="@+id/tv_categories_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_xlarge"
+                    android:layout_toEndOf="@id/iv_categories_main"
+                    android:text="@string/explore_categories"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_regular_2x" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/v_divider_main_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/rl_categories"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:background="@color/divider" />
 
         </RelativeLayout>
 

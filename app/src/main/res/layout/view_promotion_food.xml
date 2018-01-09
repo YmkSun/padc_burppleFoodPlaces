@@ -11,25 +11,49 @@
         android:layout_width="@dimen/rv_item_img_width"
         android:layout_height="@dimen/rv_item_height">
 
-        <ImageView
-            android:id="@+id/iv_promotion_food"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/rv_item_img_height"
-            android:scaleType="centerCrop"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/img_pasta" />
+        <RelativeLayout
+            android:id="@+id/rl_promotion_food"
+            android:layout_width="@dimen/rv_item_img_width"
+            android:layout_height="@dimen/rv_item_img_height">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/rv_item_img_height"
-            android:background="@color/trans_view_light"
-            android:layout_alignParentTop="true"/>
+            <ImageView
+                android:id="@+id/iv_promotion_food"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rv_item_img_height"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/img_pasta" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rv_item_img_height"
+                android:background="@color/trans_view_light"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/margin_small"
+                android:text="@string/burpple_exclusive"
+                android:textSize="@dimen/text_smaller"
+                android:textColor="@color/white_full"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:background="@color/yellow_full"
+                android:shadowColor="@color/black_full"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"/>
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/tv_promotion_food_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/iv_promotion_food"
+            android:layout_below="@id/rl_promotion_food"
             android:text="@string/food_label_4"
             android:textColor="@color/white_full"
             android:textSize="@dimen/text_regular_2x"
