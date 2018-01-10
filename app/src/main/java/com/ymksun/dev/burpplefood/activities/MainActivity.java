@@ -1,5 +1,10 @@
 package com.ymksun.dev.burpplefood.activities;
 
+import android.os.Handler;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +18,12 @@ import com.ymksun.dev.burpplefood.adapters.MainPagerAdapter;
 import com.ymksun.dev.burpplefood.adapters.NearestFoodListAdapter;
 import com.ymksun.dev.burpplefood.adapters.NearestFoodTagAdapter;
 import com.ymksun.dev.burpplefood.adapters.PromotionFoodListAdapter;
+import com.ymksun.dev.burpplefood.behaviors.BottomNavigationViewBehavior;
+import com.ymksun.dev.burpplefood.helpers.BottomNavigationViewHelper;
+import com.ymksun.dev.burpplefood.helpers.MainPagerHelper;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_guideline_food_list)
     RecyclerView rvGuidelineFoodList;
 
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView mBottomNavigationView;
+
     private MainPagerAdapter mainPagerAdapter;
     private NearestFoodTagAdapter mNearestFoodTagAdapter;
     private NearestFoodListAdapter mNearestFoodListAdapter;
@@ -50,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mainPagerAdapter = new MainPagerAdapter(getApplicationContext());
         vpToolbarImages.setAdapter(mainPagerAdapter);
         vpToolbarImages.setOffscreenPageLimit(mainPagerAdapter.getCount());
+        MainPagerHelper.autoScrollPager(vpToolbarImages, mainPagerAdapter.getCount());
 
         mNearestFoodTagAdapter = new NearestFoodTagAdapter(getApplicationContext());
         rvNearFoodTag.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -66,5 +81,9 @@ public class MainActivity extends AppCompatActivity {
         mGuidelineFoodAdapter = new GuidelineFoodAdapter(getApplicationContext());
         rvGuidelineFoodList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
         rvGuidelineFoodList.setAdapter(mGuidelineFoodAdapter);
+
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) mBottomNavigationView.getLayoutParams();
+        layoutParams.setBehavior(new BottomNavigationViewBehavior());
+        BottomNavigationViewHelper.removeShiftMode(mBottomNavigationView);
     }
 }

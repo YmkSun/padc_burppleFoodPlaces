@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="256dp"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
+            android:background="@drawable/bg_app_bar"
+            app:contentScrim="@color/primary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <android.support.v4.view.ViewPager
@@ -29,8 +30,8 @@
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                app:layout_collapseMode="pin"/>
+                android:layout_height="80dp"
+                app:layout_collapseMode="pin" />
 
             <TextView
                 android:id="@+id/title_rp"
@@ -46,22 +47,21 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:layout_marginEnd="@dimen/margin_medium_2"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="80dp"
-                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:background="@drawable/bg_custom_search_main"
                 android:drawableStart="@drawable/ic_search_gray_24dp"
+                android:fitsSystemWindows="true"
                 android:focusable="false"
                 android:padding="@dimen/margin_card_medium"
                 android:text="@string/placeholder_main_search"
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/text_regular_2x"
                 app:layout_collapseMode="pin"
-                android:fitsSystemWindows="true" />
-
-
+                app:layout_scrollFlags="scroll|enterAlways" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -77,77 +77,79 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <RelativeLayout
-                android:id="@+id/rl_near_places_main"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_xlarge">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_alignParentBottom="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/background_near" />
-
-                <TextView
-                    android:id="@+id/tv_near_small_title"
+                <RelativeLayout
+                    android:id="@+id/rl_near_places_main"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin_medium_2"
-                    android:layout_marginStart="@dimen/margin_medium_2"
-                    android:text="@string/you_are_near"
-                    android:textAllCaps="true"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/text_regular"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="@dimen/margin_xlarge">
 
-                <TextView
-                    android:id="@+id/tv_near_head_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_near_small_title"
-                    android:layout_marginEnd="@dimen/margin_medium_2"
-                    android:layout_marginStart="@dimen/margin_medium_2"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:text="@string/near_head_title"
-                    android:textColor="@color/primary_text"
-                    android:textSize="@dimen/text_heading_1x"
-                    android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/iv_near_food_footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_alignParentBottom="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/background_near" />
 
-                <TextView
-                    android:id="@+id/tv_near_known_for"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_near_head_title"
-                    android:layout_marginEnd="@dimen/margin_medium_2"
-                    android:layout_marginStart="@dimen/margin_medium_2"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:text="@string/known_for"
-                    android:textColor="@color/primary"
-                    android:textSize="@dimen/text_regular"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_near_small_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_medium_2"
+                        android:layout_marginStart="@dimen/margin_medium_2"
+                        android:text="@string/you_are_near"
+                        android:textAllCaps="true"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/text_regular"
+                        android:textStyle="bold" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_near_food_tag"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_near_known_for"
-                    android:layout_marginTop="@dimen/margin_medium_2" />
+                    <TextView
+                        android:id="@+id/tv_near_head_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_near_small_title"
+                        android:paddingBottom="@dimen/margin_medium"
+                        android:paddingStart="@dimen/margin_medium_2"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:text="@string/near_head_title"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/text_heading_1x"
+                        android:textStyle="bold" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv_near_food_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rv_near_food_tag"
-                    android:layout_marginBottom="@dimen/margin_medium"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:clipToPadding="false"
-                    android:padding="@dimen/margin_small"
-                    android:scrollbarStyle="outsideOverlay" />
+                    <TextView
+                        android:id="@+id/tv_near_known_for"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_near_head_title"
+                        android:layout_marginEnd="@dimen/margin_medium_2"
+                        android:layout_marginStart="@dimen/margin_medium_2"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/known_for"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_regular"
+                        android:textStyle="bold"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_near_food_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_near_known_for"
+                        android:layout_marginTop="@dimen/margin_medium_2" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_near_food_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rv_near_food_tag"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:layout_marginTop="@dimen/margin_medium_2"
+                        android:clipToPadding="false"
+                        android:padding="@dimen/margin_small"
+                        android:scrollbarStyle="outsideOverlay" />
 
 
-            </RelativeLayout>
+                </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_promotion_food_main"
@@ -399,5 +401,15 @@
 
     </android.support.v4.widget.NestedScrollView>
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/white_full"
+        app:itemIconTint="@color/secondary_text"
+        app:itemTextColor="@color/secondary_text"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:menu="@menu/bottom_nav_menu"/>
 
 </android.support.design.widget.CoordinatorLayout>

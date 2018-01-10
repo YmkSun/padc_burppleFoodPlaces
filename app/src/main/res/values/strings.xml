@@ -17,7 +17,10 @@
     <string name="trending_venues">Trending Venues</string>
     <string name="explore_neighbourhoods">Explore Neighbourhoods</string>
     <string name="explore_categories">Explore Categories</string>
-    <string name="burpple_exclusive">Burpple Exclusive</string>
+    <string name="burpple_exclusive">Burpple Exclusive</string>e
+    <string name="all_guides">All Guides</string>
+    <string name="activity">Activity</string>
+    <string name="profile">Profile</string>
 
     <string name="near_head_title">Yangon</string>
     <string name="foog_tag_main">food tag</string>
