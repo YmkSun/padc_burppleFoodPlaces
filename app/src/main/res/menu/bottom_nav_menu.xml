@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/menu_explore"
-        android:checked="true"
+        android:enabled="true"
         android:icon="@drawable/ic_explore_24dp"
         android:title="@string/explore"
         app:showAsAction="ifRoom"/>
@@ -32,7 +32,7 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/menu_favorite_news"
+        android:id="@+id/menu_person"
         android:enabled="true"
         android:icon="@drawable/ic_person_24dp"
         android:title="@string/profile"

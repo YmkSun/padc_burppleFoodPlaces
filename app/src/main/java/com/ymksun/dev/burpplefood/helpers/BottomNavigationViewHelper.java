@@ -1,10 +1,16 @@
 package com.ymksun.dev.burpplefood.helpers;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.lang.reflect.Field;
 
@@ -26,9 +32,6 @@ public class BottomNavigationViewHelper {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
                 item.setShiftingMode(false);
                 item.setChecked(item.getItemData().isChecked());
-                if (item.getItemData().getTitle()=="") {
-                    item.getItemData().getIcon().setBounds(40, 40, 40, 40);
-                }
             }
 
         } catch (NoSuchFieldException e) {
